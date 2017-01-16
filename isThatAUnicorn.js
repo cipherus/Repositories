@@ -16,7 +16,7 @@ $(document).ready(function() {
                                                     }
                                     }
                                    
-                                    if(alpha < 180 ) {
+                                    if(alpha < 180.0 ) {
                                                              winCounter++;
                                                              $("#winCounter").text(winCounter);
                                                              ocounter++;
