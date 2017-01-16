@@ -1,44 +1,42 @@
-<DOCTYPE html>
+<!DOCTYPE=html>
 <html>
     <head>
-        <script>
-            
-            
-            
-            
-    function init() {
-        //Find our div containers in the DOM
-        var dataContainerOrientation = document.getElementById('dataContainerOrientation');
-        var    dataContainerMotion = document.getElementById('dataContainerMotion');
+        <title>Introduction and Game Instructions</title>
+        <style type="text/css">
+            body {background-color: black; color: white}
+            h1 {background-color:purple; color: #ffa500; border-color: #ffa500;
+                text-align: center }
+        input {background-color:purple; color: #ffa500; border-color: #ffa500;
+            font-size: x-large}
+            div {text-align: center}
 
-        //Check for support for DeviceOrientation event
-        if(window.DeviceOrientationEvent) {
-            window.addEventListener('deviceorientation', function(event) {
-                                    var alpha = event.alpha;
-                                    var beta = event.beta;
-                                    var gamma = event.gamma;
-
-            if(alpha!=null || beta!=null || gamma!=null)
-            dataContainerOrientation.innerHTML = 'alpha: ' + alpha + '<br/>beta: ' + beta + '<br />gamma: ' + gamma;
-            }, false);
-            }
-
-            
-            }
-        
-        
-        
-        
-        
-        
-        </script>
+        </style>
     </head>
-    <body onload="init()">
-        <div id="dataContainerOrientation">
-            No device orientation data
+    <body>
+        <h1>IS THAT A UNICORN?!</h1>
+        <h3> Game Instructions </h3>
+        <p>Welcome to <b>IS THAT A UNICORN?!</b> the game that trains your
+        inner compass. Your mission, if you choose to accept it, is to orient yourself and your device
+        such that you are facing the specified geographic direction and then pressing the <b>UNICORN!</b>
+        button to confirm your orientation.</p>
+        <p> You succeed if you have correctly determined which direction to face, to a certain degree of
+        accuracy of course.</p>
+        
+        <h3>Tips</h3>
+        <ol>
+            <li>At noon, the Sun is always to the south.</li>
+            <li> One of the brightest stars in the night sky is Polaris it is to the north.  Polaris is the last star that makes up the handle of the Little Dipper.</li>
+            <li> Churches mostly have their Altar on the East side of the Church.</li>
+        </ol>
+        <div>
+        <input id="toGame" type="button" value="To the Game"
+        onclick="window.location='isThatAUnicorn.html'"/>
         </div>
-        <div id="dataContainerMotion">
-            No device motion data
-        </div>
+        
+        <p> PS: if you are not using a mobile device that has the required sensors
+        then i regret to have to inform you that you will not be able to play.</p>
+        
+        
     </body>
+    
 </html>
