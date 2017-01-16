@@ -3,7 +3,7 @@
     <head>
         <title>Introduction and Game Instructions</title>
         <style type="text/css">
-            body{ color: white;
+            body{
                 background: url(backgroud-image.jpg) no-repeat center center fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
@@ -23,24 +23,22 @@
         <h3> Game Instructions </h3>
         <p>Welcome to <b>IS THAT A UNICORN?!</b> the game that trains your
         inner compass. Your mission, if you choose to accept it, is to orient yourself and your device
-        such that you are facing the specified geographic direction and then pressing the <b>UNICORN!</b>
+        such that you are facing in the specified geographic direction and then pressing the <b>UNICORN!</b>
         button to confirm your orientation.</p>
-        <p> You succeed if you have correctly determined which direction to face, to a certain degree of
-        accuracy of course.</p>
-        
+        <p> You succeed if you have correctly determined which direction to face.</p>
+        <div>
+        <input id="toGame" type="button" value="To the Game"
+        onclick="window.location='isThatAUnicorn.html'"/>
+        </div>
         <h3>Tips</h3>
         <ol>
             <li>At noon, the Sun is always to the south.</li>
             <li> One of the brightest stars in the night sky is Polaris it is to the north.  Polaris is the last star that makes up the handle of the Little Dipper.</li>
             <li> Churches mostly have their Altar on the East side of the Church.</li>
         </ol>
-        <div>
-        <input id="toGame" type="button" value="To the Game"
-        onclick="window.location='isThatAUnicorn.html'"/>
-        </div>
         
-        <p> PS: if you are not using a mobile device that has the required sensors
-        then i regret to have to inform you that you will not be able to play.</p>
+        
+        <p> PS: A mobile device with an integrated geomagnetic sensor is required to play .</p>
         
         
     </body>
