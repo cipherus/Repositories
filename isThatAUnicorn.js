@@ -10,12 +10,12 @@ $(document).ready(function() {
 
                   
                   $("#button").click(function() {
-                                   if(window.DeviceOrientationEvent) {
+                                   /*if(window.DeviceOrientationEvent) {
                                      window.addEventListener('deviceorientation', function(event) {
                                                 alpha = event.alpha;
                                                     }
                                     }
-                                    
+                                   */ 
                                     if(winCounter < 3 ) {
                                                              winCounter++;
                                                              $("#winCounter").text(winCounter);
