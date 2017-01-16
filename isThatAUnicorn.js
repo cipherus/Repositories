@@ -4,8 +4,8 @@ $(document).ready(function() {
                   var winCounter = 0;
                   var ocounter = 1;
                   var orientationStrings = ["South West", "North", "South East", "West", "South", "North West", "East", "North East"];
-                  var orientations = ["135", "0", "225", "90", "180", "45", "270", "315"];
-                  var accuracy = "20";
+                  var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
+                  var accuracy = 20;
                   var alpha = 0;
 
                   
@@ -16,7 +16,8 @@ $(document).ready(function() {
                                                              }, false);
                                     }
                                    
-                                    if(alpha < 180.0 ) {
+                                    if(((orientations[ocounter] - accuracy) < alpha && alpha < (orientations[ocounter] + accuracy) )
+                                       || ocounter==1 && (360 - accuracy < alpha || alpha < accuracy) ) {
                                                              winCounter++;
                                                              $("#winCounter").text(winCounter);
                                                              ocounter++;
