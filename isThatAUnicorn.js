@@ -15,7 +15,7 @@ $(document).ready(function() {
                                                 alpha = event.alpha;
                                                     }
                                     }
-                                   */ 
+                                   */
                                     if(winCounter < 3 ) {
                                                              winCounter++;
                                                              $("#winCounter").text(winCounter);
@@ -23,19 +23,20 @@ $(document).ready(function() {
                                                              if (ocounter > 7) { ocounter = 0;};
                                                              $("#direction").text(orientationStrings[ocounter]);
                                                              
-                                                             $("#unicornreward").attr("src" , "unicornreward.gif");
+                                                           /*  $("#unicornreward").attr("src" , "unicornreward.gif");
                                                              $("#unicornreward").fadeIn(250, function() {
                                                                                         $("#unicornreward").delay(1900);
                                                                                         $("#unicornreward").fadeOut(250);
                                                                   
                                                                                         });
                                                              $("#unicornreward").attr("src" , "unicornreward.gif");
+                                                            */
                                      
                                            }
                                     else {
                                                              winCounter= 0;
                                                              $("#winCounter").text(winCounter);
-                                                             
+                                                             /*
                                                              $("#unicornreward").attr("src" , "horsefail.gif");
                                                              $("#unicornreward").fadeIn(250, function() {
                                                                                         $("#unicornreward").delay(1900);
@@ -43,6 +44,7 @@ $(document).ready(function() {
                                                                                         
                                                                                         });
                                                              $("#unicornreward").attr("src" , "horsefail.gif");
+                                                              */
                                           }
                     });
 });
