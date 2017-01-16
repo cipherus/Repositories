@@ -13,7 +13,7 @@ $(document).ready(function() {
                                    if(window.DeviceOrientationEvent) {
                                      window.addEventListener('deviceorientation', function(event) {
                                                 alpha = event.alpha;
-                                                    }
+                                                             }, false);
                                     }
                                    
                                     if(alpha < 180.0 ) {
