@@ -6,37 +6,30 @@ $(document).ready(function() {
                   var orientationStrings = ["South West", "North", "South East", "West", "South", "North West", "East", "North East"];
                   var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
                   var accuracy = 20;
-                  var alpha = 0;
-                  var tempAlpha = -1;
-                  function waitforalpha() {
-                    if(tempAlpha == -1) {
-                        
-                        alpha++;
-                        waitforalpha();
+                  var alpha = -1;
+                  function waitforalpha(oldAlpha) {
+                    if(alpha == oldAlpha) {
+                        waitforalpha(oldAlpha);
                         }
                   }
 
                   
                   $("#button").click(function() {
                                      
-                                     
-                                     $("#alphaValueBefore").text(alpha);
+                                    
                                      
                                   
+                                     var oldAlpha = alpha % 360;
                                      
-                                   if(window.DeviceOrientationEvent) {
-                                     window.addEventListener('deviceorientation', function(event) {
-                                                tempAlpha = event.alpha;
-                                                alpha = tempAlpha;
-                                                
-                                                             
-                                                             }, false);
-                                    }
+                                     if(window.DeviceOrientationEvent) {
+                                        window.addEventListener('deviceorientation', function(event) {
+                                                alpha = event.alpha;
+                                                }, false);
+                                     }
                                      
-                                     waitforalpha();
+                                     waitforalpha(oldAlpha);
                                      
                                      $("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);
                                      
                                      
                                     if(ocounter==1 && (360 - accuracy < alpha || alpha < accuracy) ||
