@@ -1,39 +1,3 @@
-$(document).ready(function() {
-                  $(".picture").hide();
-                  
-                  var winCounter = 0;
-                  var ocounter = 1;
-                  var orientationStrings = ["South West", "North", "South East", "West", "South", "North West", "East", "North East"];
-                  var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
-                  var accuracy = 20;
-                  var alpha = 0;
-                  var tempAlpha;
-
-                  
-                  $("#button").click(function() {
-                                     
-                                     
-                                     $("#alphaValueBefore").text(alpha);
-                                     
-                                  
-                                     
-                                   if(window.DeviceOrientationEvent) {
-                                     window.addEventListener('deviceorientation', function(event) {
-                                                tempAlpha = event.alpha;
-                                                alpha = tempAlpha;
-                                                             play();
-                                                             
-                                                             }, false);
-                                    }
-                                     
-                                     
-                                     $("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);
-                                     
-                                     
-                                    
-                    });
-});
 
 function play() {
     
@@ -73,3 +37,39 @@ function play() {
         
     }
 }
+$(document).ready(function() {
+                  $(".picture").hide();
+                  
+                  var winCounter = 0;
+                  var ocounter = 1;
+                  var orientationStrings = ["South West", "North", "South East", "West", "South", "North West", "East", "North East"];
+                  var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
+                  var accuracy = 20;
+                  var alpha = 0;
+                  var tempAlpha;
+
+                  
+                  $("#button").click(function() {
+                                     
+                                     
+                                     $("#alphaValueBefore").text(alpha);
+                                     
+                                  
+                                     
+                                   if(window.DeviceOrientationEvent) {
+                                     window.addEventListener('deviceorientation', function(event) {
+                                                tempAlpha = event.alpha;
+                                                alpha = tempAlpha;
+                                                             play();
+                                                             
+                                                             }, false);
+                                    }
+                                     
+                                     
+                                     $("#alphaValue").text(alpha);
+                                     $("#tempAlpha").text(tempAlpha);
+                                     
+                                     
+                                    
+                    });
+});
