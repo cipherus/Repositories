@@ -11,12 +11,23 @@ $(document).ready(function() {
 
                   
                   $("#button").click(function() {
+                                     
+                                     
+                                     $("#alphaValueBefore").text(alpha);
+                                     
+                                     
                                    if(window.DeviceOrientationEvent) {
                                      window.addEventListener('deviceorientation', function(event) {
                                                 tempAlpha = event.alpha;
                                                              }, false);
                                     }
                                      alpha = tempAlpha;
+                                     
+                                     
+                                     $("#alphaValue").text(alpha);
+                                     $("#tempAlpha").text(tempAlpha);
+                                     
+                                     
                                     if(ocounter==1 && (360 - accuracy < alpha || alpha < accuracy) ||
                                        ((orientations[ocounter] - accuracy) < alpha && alpha < (orientations[ocounter] + accuracy) ) ) {
                                                              winCounter++;
