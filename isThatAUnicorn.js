@@ -15,14 +15,16 @@ $(document).ready(function() {
                                      
                                      $("#alphaValueBefore").text(alpha);
                                      
-                                     
+                                  
                                      
                                    if(window.DeviceOrientationEvent) {
                                      window.addEventListener('deviceorientation', function(event) {
                                                 tempAlpha = event.alpha;
+                                                alpha = tempAlpha;
+                                                
+                                                             
                                                              }, false);
                                     }
-                                     alpha = tempAlpha;
                                      
                                      
                                      $("#alphaValue").text(alpha);
