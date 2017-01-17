@@ -7,17 +7,18 @@ $(document).ready(function() {
                   var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
                   var accuracy = 20;
                   var alpha = 0;
+                  var tempAlpha;
 
                   
                   $("#button").click(function() {
                                    if(window.DeviceOrientationEvent) {
                                      window.addEventListener('deviceorientation', function(event) {
-                                                alpha = event.alpha;
+                                                tempAlpha = event.alpha;
                                                              }, false);
                                     }
-                                   
-                                    if(((orientations[ocounter] - accuracy) < alpha && alpha < (orientations[ocounter] + accuracy) )
-                                       || ocounter==1 && (360 - accuracy < alpha || alpha < accuracy) ) {
+                                     alpha = tempAlpha;
+                                    if(ocounter==1 && (360 - accuracy < alpha || alpha < accuracy) ||
+                                       ((orientations[ocounter] - accuracy) < alpha && alpha < (orientations[ocounter] + accuracy) ) ) {
                                                              winCounter++;
                                                              $("#winCounter").text(winCounter);
                                                              ocounter++;
@@ -39,7 +40,7 @@ $(document).ready(function() {
                                                              $("#winCounter").text(winCounter);
                                      
                                                              $("#unicornreward").attr("src" , "horsefail.gif");
-                                                             $("#unicornreward").fadeIn(250, function() {
+                                                             $("#unicornreward").fadeIn(300, function() {
                                                                                         $("#unicornreward").delay(1900);
                                                                                         $("#unicornreward").fadeOut(250);
                                                                                         

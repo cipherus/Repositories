@@ -13,41 +13,36 @@
             -o-background-size: cover;
             background-size: cover;
             min-height: 100%;
-            text-align: center;}
-            h1 {background-color:purple; color: #ffa500; border-color: #ffa500;
-                text-align: center; }
+            }
         
-        #button {align: bottom; background-color:#0000B6; color: #ffa500; border-color: #ffa500;
+        
+        .unicornCounter {align:left ;}
+        .objective { font-size: xx-large; align:center;}
+        
+        
+        #button {align: center; background-color:#0000B6; color: #ffa500; border-color: #ffa500;
             font-size: xx-large; width: 10em;  height: 4em;}
-        #objective { font-size: xx-large;}
+
         
-            .unicornCounterTable {align= "right"; rules= "rows";}
-            .unicornCounter {align="right";color="red"}
-            
         
         </style>
     </head>
     <body>
         
         
-        <table class= "unicornCounterTable" >
-            <tr>
-                <td class= "unicornCounter"><img class="unicornCounter" src="unicornCounter.png" height="72px" width="80px"/></td>
-                <td class= "unicornCounter"> X  <b id=winCounter> 0</b>
-                </td>
-                    
-            </tr>
-        </table>
+        
+        <h1 class= "unicornCounter">
+            <img class="unicornCounter" src="unicornCounter.png" height="72px" width="80px"/>
+            X  <b id=winCounter> 0</b>
+        </h1>
         
         
         
         
             
-        <div id="objective">
+            <h1 class="objective" align="center">
             There is a Unicorn to the <br/> <direction id="direction">North</direction>
-            
-                
-        </div>
+        </h1>
                 
         <table align= "center">
             <tr height="245" width="192">
@@ -58,10 +53,10 @@
                 </td>
             </tr>
         </table>
-        <div id=buttonPosition>
+        <h1 id=buttonPosition align="center">
             <input id= "button" type="button" value="UNICORN!">
             
-        </div>
+        </h1>
 
         
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
