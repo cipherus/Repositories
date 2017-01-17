@@ -26,28 +26,8 @@ $(document).ready(function() {
                                                              }, false);
                                     }
                                      
+                                     waitforalpha();
                                      
-                                     $("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);$("#alphaValue").text(alpha);
-                                     $("#tempAlpha").text(tempAlpha);
                                      $("#alphaValue").text(alpha);
                                      $("#tempAlpha").text(tempAlpha);
                                      
@@ -85,3 +65,9 @@ $(document).ready(function() {
                                           }
                     });
 });
+function waitforalpha() {
+    if(tempAlpha == -1) {
+        waitforalpha();
+        
+    }
+}
