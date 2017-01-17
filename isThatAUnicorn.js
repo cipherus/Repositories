@@ -7,7 +7,14 @@ $(document).ready(function() {
                   var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
                   var accuracy = 20;
                   var alpha = 0;
-                  var tempAlpha;
+                  var tempAlpha = -1;
+                  function waitforalpha() {
+                    if(tempAlpha == -1) {
+                        
+                        alpha++;
+                        waitforalpha();
+                        }
+                  }
 
                   
                   $("#button").click(function() {
@@ -65,9 +72,3 @@ $(document).ready(function() {
                                           }
                     });
 });
-function waitforalpha() {
-    if(tempAlpha == -1) {
-        waitforalpha();
-        
-    }
-}
