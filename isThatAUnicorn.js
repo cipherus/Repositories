@@ -16,6 +16,7 @@ $(document).ready(function() {
                                      $("#alphaValueBefore").text(alpha);
                                      
                                      
+                                     
                                    if(window.DeviceOrientationEvent) {
                                      window.addEventListener('deviceorientation', function(event) {
                                                 tempAlpha = event.alpha;
