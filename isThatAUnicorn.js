@@ -7,28 +7,15 @@ $(document).ready(function() {
                   var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
                   var accuracy = 20;
                   var alpha = -1;
-                  function waitforalpha(oldAlpha) {
-                    if(alpha == oldAlpha) {
-                        waitforalpha(oldAlpha);
-                        }
+                  
+                  if(window.DeviceOrientationEvent) {
+                    window.addEventListener('deviceorientation', function(event) {
+                                          alpha = event.alpha;
+                                          }, false);
+                  
                   }
 
-                  
                   $("#button").click(function() {
-                                     
-                                    
-                                     
-                                  
-                                     var oldAlpha = alpha % 360;
-                                     
-                                     if(window.DeviceOrientationEvent) {
-                                        window.addEventListener('deviceorientation', function(event) {
-                                                alpha = event.alpha;
-                                                }, false);
-                                     
-                                     }
-                                     
-                                     waitforalpha(oldAlpha);
                                      
                                      $("#alphaValue").text(alpha);
                                      
