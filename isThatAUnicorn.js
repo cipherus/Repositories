@@ -10,7 +10,8 @@ $(document).ready(function() {
                   
                   if(window.DeviceOrientationEvent) {
                     window.addEventListener('deviceorientation', function(event) {
-                                          alpha = event.webkitCompassHeading;
+                                          //alpha = event.webkitCompassHeading;
+                                            alpha = event.alpha;
                                           }, false);
                   
                   }
