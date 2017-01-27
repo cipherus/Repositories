@@ -52,7 +52,7 @@ $(document).ready(function() {
                                                                                                                     $("#unicornreward").attr("src" , "placeholder.png");
                                                                                                                     
                                                                                                                     });
-                                                                                            $("#unicornreward").fadeIn(500);
+                                                                                            $("#unicornreward").show();
                                                                                         });
                                      
                                      
