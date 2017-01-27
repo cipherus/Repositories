@@ -32,11 +32,12 @@ $(document).ready(function() {
                                                              $("#unicornreward").attr("src" , "unicornreward.gif");
                                                              $("#unicornreward").fadeIn(250, function() {
                                                                                         $("#unicornreward").delay(1900);
-                                                                                        $("#unicornreward").fadeOut(150);
+                                                                                        $("#unicornreward").fadeOut(150, function() {
+                                                                                                                    $("#unicornreward").attr("src" , "placeholder.png");
+                                                                                                                    $("#unicornreward").show();
+                                                                                                                    });
                                                                   
                                                                                         });
-                                                             $("#unicornreward").attr("src" , "unicornreward.gif");
-                                     
                                      
                                            }
                                     else {
@@ -46,12 +47,14 @@ $(document).ready(function() {
                                                              $("#unicornreward").attr("src" , "horsefail.gif");
                                                              $("#unicornreward").fadeIn(250, function() {
                                                                                         $("#unicornreward").delay(1900);
-                                                                                        $("#unicornreward").fadeOut(150);
-                                                                                        
+                                                                                        $("#unicornreward").fadeOut(150, function() {
+                                                                                                                    $("#unicornreward").attr("src" , "placeholder.png");
+                                                                                                                    $("#unicornreward").show();
+                                                                                                                    });
+
                                                                                         });
-                                                             $("#unicornreward").attr("src" , "horsefail.gif");
-                                     //$("#unicornreward").attr("src" , "placeholder.png");
-                                                            
+                                     
+                                     
                                           }
                                      
                     });
