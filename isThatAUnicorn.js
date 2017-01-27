@@ -50,9 +50,9 @@ $(document).ready(function() {
                                                                                         $("#unicornreward").delay(1900);
                                                                                         $("#unicornreward").fadeOut(150, function() {
                                                                                                                     $("#unicornreward").attr("src" , "placeholder.png");
-                                                                                                                    $("#unicornreward").fadeIn(500);
+                                                                                                                    
                                                                                                                     });
-
+                                                                                            $("#unicornreward").fadeIn(500);
                                                                                         });
                                      
                                      
