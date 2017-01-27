@@ -32,7 +32,7 @@ $(document).ready(function() {
                                                              $("#unicornreward").attr("src" , "unicornreward.gif");
                                                              $("#unicornreward").fadeIn(250, function() {
                                                                                         $("#unicornreward").delay(1900);
-                                                                                        $("#unicornreward").fadeOut(250);
+                                                                                        $("#unicornreward").fadeOut(150);
                                                                   
                                                                                         });
                                                              $("#unicornreward").attr("src" , "unicornreward.gif");
@@ -44,9 +44,9 @@ $(document).ready(function() {
                                                              $("#winCounter").text(winCounter);
                                      
                                                              $("#unicornreward").attr("src" , "horsefail.gif");
-                                                             $("#unicornreward").fadeIn(300, function() {
+                                                             $("#unicornreward").fadeIn(250, function() {
                                                                                         $("#unicornreward").delay(1900);
-                                                                                        $("#unicornreward").fadeOut(250);
+                                                                                        $("#unicornreward").fadeOut(150);
                                                                                         
                                                                                         });
                                                              $("#unicornreward").attr("src" , "horsefail.gif");
