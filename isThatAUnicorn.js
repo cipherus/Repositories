@@ -50,8 +50,9 @@ $(document).ready(function() {
                                                                                         
                                                                                         });
                                                              $("#unicornreward").attr("src" , "horsefail.gif");
+                                     $("#unicornreward").attr("src" , "placeholder.png");
                                                             
                                           }
-                                     $("#unicornreward").attr("src" , "placeholder.png");
+                                     
                     });
 });
