@@ -1,5 +1,5 @@
 $(document).ready(function() {
-                  $(".picture").hide();
+                  //$(".picture").hide();
                   
                   var winCounter = 0;
                   var ocounter = 1;
