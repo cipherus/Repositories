@@ -48,8 +48,9 @@ $(document).ready(function() {
                                                              $("#unicornreward").fadeIn(250, function() {
                                                                                         $("#unicornreward").delay(1900);
                                                                                         $("#unicornreward").fadeOut(150, function() {
-                                                                                                                    $("#unicornreward").attr("src" , "placeholder.png");
+                                                                                                                    $("#unicornreward").attr("src" , "placeholder.png", function() {
                                                                                                                     $("#unicornreward").show();
+                                                                                                                                             } );
                                                                                                                     });
 
                                                                                         });
