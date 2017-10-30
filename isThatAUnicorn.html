@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>IS THAT A UNICORN</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <style type="text/css">
             html{
                 height: 100%;
@@ -13,6 +14,7 @@
             -o-background-size: cover;
             background-size: cover;
             min-height: 100%;
+            font-family: 'Open Sans', sans-serif;
             }
         
         
@@ -20,8 +22,13 @@
         .objective { font-size: xx-large; align:center;}
         
         #unicornreward {vertical-align: middle}
-        #button {vertical-align: bottom; background-color:#0000B6; color: #ffa500; border-color: #ffa500;
-            font-size: xx-large; width: 10em;  height: 4em;}
+            
+        #button {vertical-align: center; background-color:#0000B6; color: #ffa500; border-color: #ffa500;
+            font-size: 48px; font-family: 'Open Sans', sans-serif; width: 10em;  height: 4em;}
+        
+        #mainarea {position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);}
+        #rewardarea{display:none;}
+        #failarea{display:none;}
 
         
         
@@ -37,22 +44,24 @@
         </h1>
         
         
+        <div id="mainarea">
+            <h1 class="objective" align="center">
+                There is a Unicorn to the <br/> <direction id="direction">North</direction>
+            </h1>
 
-        <h1 class="objective" align="center">
-            There is a Unicorn to the <br/> <direction id="direction">North</direction>
-        </h1>
-                
-        <div align= "center" height="490" width="384">
-                    
-                <img  id= "unicornreward" class="picture" src="placeholder.png" height="90%" />
+            <h1 id=buttonPosition align="center">
+                <input id= "button" type="button" value="UNICORN!">
 
+            </h1>
         </div>
+        <img id ="rewardarea" src="unicornreward.gif"/>
+
+
+        <img id ="failarea" src="horsefail.gif"/>    
+     
         
-        <h1 id=buttonPosition align="center">
-            <input id= "button" type="button" value="UNICORN!">
-            
-        </h1>
-        <h2 align="center">
+        
+        <h2 align="center" vertical-align="bottom">
             
             <b id=alphaValue> -1</b>
             

@@ -1,8 +1,10 @@
 $(document).ready(function() {
                   //$(".picture").hide();
+                  document.getElementById('rewardarea').style.display = "none";
+                  document.getElementById('failarea').style.display = "none";
                   
                   var winCounter = 0;
-                  var ocounter = 1;
+                  var orientationValue = 1;
                   var orientationStrings = ["South West", "North", "South East", "West", "South", "North West", "East", "North East"];
                   var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
                   var accuracy = 20;
@@ -21,42 +23,45 @@ $(document).ready(function() {
                                      $("#alphaValue").text(alpha);
                                      
                                      
-                                    if(ocounter==1 && (360 - accuracy < alpha || alpha < accuracy) ||
-                                       ((orientations[ocounter] - accuracy) < alpha && alpha < (orientations[ocounter] + accuracy) ) ) {
+                                    if(orientationValue==1 && (360 - accuracy < alpha || alpha < accuracy) ||
+                                       ((orientations[orientationValue] - accuracy) < alpha && alpha < (orientations[orientationValue] + accuracy) ) ) {
                                                              winCounter++;
-                                                             $("#winCounter").text(winCounter);
-                                                             ocounter++;
-                                                             if (ocounter > 7) { ocounter = 0;};
-                                                             $("#direction").text(orientationStrings[ocounter]);
-                                                             
-                                                             $("#unicornreward").attr("src" , "unicornreward.gif");
-                                                             $("#unicornreward").fadeIn(250, function() {
-                                                                                        $("#unicornreward").delay(1900);
-                                                                                        $("#unicornreward").fadeOut(150, function() {
-                                                                                                                    $("#unicornreward").attr("src" , "placeholder.png");
-                                                                                                                    $("#unicornreward").show();
-                                                                                                                    });
-                                                                  
-                                                                                        });
+
+                                                             orientationValue++;
+                                                             if (orientationValue > 7) { orientationValue = 0;};
+                                                              document.getElementById('mainarea').style.display = "none";
+                                                              document.getElementById('rewardarea').style.display = "block";
+                                                              document.getElementById('failarea').style.display = "none";
+
 
                                      
                                            }
                                     else {
                                                              winCounter= 0;
-                                                             $("#winCounter").text(winCounter);
+
+                                                              document.getElementById('mainarea').style.display = "none";
+                                                              document.getElementById('rewardarea').style.display = "none";
+                                                              document.getElementById('failarea').style.display = "block";
+
                                      
-                                                             $("#unicornreward").attr("src" , "horsefail.gif");
-                                                             $("#unicornreward").fadeIn(250, function() {
-                                                                                        $("#unicornreward").delay(1900);
-                                                                                        $("#unicornreward").fadeOut(150, function() {
-                                                                                                                    $("#unicornreward").attr("src" , "placeholder.png");
-                                                                                                                    
-                                                                                                                    });
-                                                                                            $("#unicornreward").show();
-                                                                                        });
+                                                           
+                                                            
                                      
                                      
                                           }
+                                       window.setTimeout(function() {
+                                      $("#winCounter").text(winCounter); //Set wincounter
+                              
+                                      orientationValue = Math.floor((Math.random() * 8)); //random new orientation array position 0-8
+                                      $("#direction").text(orientationStrings[orientationValue]); //Set direction text    
+                                        
+                                       document.getElementById('mainarea').style.display = "block";
+                                       document.getElementById('rewardarea').style.display = "none";
+                                       document.getElementById('failarea').style.display = "none";
+
+
+
+                                      }, 2000);
                                      
                     });
 });
