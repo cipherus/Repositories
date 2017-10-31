@@ -18,13 +18,14 @@
             }
       
         h1 {text-align: center;}
+        h2 {display: none;}
         
         .unicornCounter {text-align:left;}
         #objective { font-size: xx-large; text-align: center }
 
         #unicornreward {vertical-align: middle}
             
-        #button {background-color: purple; color: #ffa500; border-color: #ffa500;
+        .button {background-color: purple; color: #ffa500; border-color: #ffa500;
          
             font-size: 48px;
             padding: 20px; margin: 4px 2px; border-radius: 8px;
@@ -33,7 +34,11 @@
         #mainarea {position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);}
         #rewardarea{display:none; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);}
         #failarea{display:none; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);}
-        #alphaValue{position: absolute; top: 90%; left: 50%; transform: translateX(-50%) translateY(-50%);}
+
+
+        #orientationHelp {position: absolute; top: 90%; left: 50%; transform: translateX(-50%) translateY(-50%);}
+        #helpButton{font-size: xx-large;display:none;}
+        #noHelp{font-size: xx-large; display:none;}
 
         
         
@@ -55,7 +60,7 @@
             </h1>
 
             <h1 id=buttonPosition ">
-                <input id= "button" type="button" value="UNICORN!">
+                <input class= "button" type="button" value="UNICORN!">
 
             </h1>
         </div>
@@ -66,9 +71,11 @@
      
         
         
-        <h2>
+        <h2 id= orientationHelp>
             
-            <b id=alphaValue> -1</b>
+            <input class ="button" id= "helpButton" type="button" value="Need Help?">
+            Your last Heading was: <b id=alphaValue> -1 </b> degrees
+            <input class ="button" id ="noHelp" type="button" value="No i don't need help">
             
         </h2>
         
