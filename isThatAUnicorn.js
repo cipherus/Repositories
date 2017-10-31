@@ -12,7 +12,11 @@ $(document).ready(function() {
                   
                   if(window.DeviceOrientationEvent) {
                     window.addEventListener('deviceorientation', function(event) {
+                                if(event.webkitCompassHeading) {
                                           alpha = Math.floor(event.webkitCompassHeading);
+                                }
+                                else {alpha = Math.floor(event.alpha);
+                                }
                                           
                                             
                                           }, false);
