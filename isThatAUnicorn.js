@@ -17,6 +17,20 @@ $(document).ready(function() {
                                           }, false);
                   
                   }
+                  $("#helpButton").click(function() {
+                    document.getElementById('helpButton').style.display = "none";
+                    document.getElementById('help').style.display = "block";
+
+
+                  });
+
+                  $("#noHelp").click(function() {
+                    document.getElementById('helpButton').style.display = "block";
+                    document.getElementById('help').style.display = "none";
+
+
+                  });
+
 
                   $("#button").click(function() {
                                      
