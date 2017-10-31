@@ -1,5 +1,5 @@
 $(document).ready(function() {
-                 
+                  //$(".picture").hide();
                   document.getElementById('rewardarea').style.display = "none";
                   document.getElementById('failarea').style.display = "none";
                   
@@ -12,11 +12,8 @@ $(document).ready(function() {
                   
                   if(window.DeviceOrientationEvent) {
                     window.addEventListener('deviceorientation', function(event) {
-                                
-                                          alpha = event.alpha;
-                                
-                                          
-                                            
+                                          //alpha = event.webkitCompassHeading;
+                                            alpha = event.alpha;
                                           }, false);
                   
                   }
@@ -30,9 +27,9 @@ $(document).ready(function() {
                                        ((orientations[orientationValue] - accuracy) < alpha && alpha < (orientations[orientationValue] + accuracy) ) ) {
                                                              winCounter++;
 
+                                                             orientationValue++;
+                                                             if (orientationValue > 7) { orientationValue = 0;};
                                                               document.getElementById('mainarea').style.display = "none";
-                                                              orientationValue = Math.floor((Math.random() * 8)); //random new orientation array position 0-8
-                                                              $("#direction").text(orientationStrings[orientationValue]); //Set direction text
                                                               document.getElementById('rewardarea').style.display = "block";
                                                               document.getElementById('failarea').style.display = "none";
 
@@ -55,7 +52,8 @@ $(document).ready(function() {
                                        window.setTimeout(function() {
                                       $("#winCounter").text(winCounter); //Set wincounter
                               
-                                         
+                                      orientationValue = Math.floor((Math.random() * 8)); //random new orientation array position 0-8
+                                      $("#direction").text(orientationStrings[orientationValue]); //Set direction text    
                                         
                                        document.getElementById('mainarea').style.display = "block";
                                        document.getElementById('rewardarea').style.display = "none";
@@ -63,7 +61,7 @@ $(document).ready(function() {
 
 
 
-                                      }, 1700);
+                                      }, 2000);
                                      
                     });
 });
