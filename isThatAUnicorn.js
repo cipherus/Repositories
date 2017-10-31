@@ -39,10 +39,10 @@ $(document).ready(function() {
                                      
                                     if(orientationValue==1 && (360 - accuracy < alpha || alpha < accuracy) ||
                                        ((orientations[orientationValue] - accuracy) < alpha && alpha < (orientations[orientationValue] + accuracy) ) ) {
-                                                             winCounter++;
-
-                                                             orientationValue++;
-                                                             if (orientationValue > 7) { orientationValue = 0;};
+                                                              winCounter++;
+                                                              
+                                                              orientationValue = Math.floor((Math.random() * 8)); //random new orientation array position 0-8
+                                                              $("#direction").text(orientationStrings[orientationValue]); //Set direction text   
                                                               document.getElementById('mainarea').style.display = "none";
                                                               document.getElementById('rewardarea').style.display = "block";
                                                               document.getElementById('failarea').style.display = "none";
@@ -66,8 +66,7 @@ $(document).ready(function() {
                                        window.setTimeout(function() {
                                       $("#winCounter").text(winCounter); //Set wincounter
                               
-                                      orientationValue = Math.floor((Math.random() * 8)); //random new orientation array position 0-8
-                                      $("#direction").text(orientationStrings[orientationValue]); //Set direction text    
+ 
                                         
                                        document.getElementById('mainarea').style.display = "block";
                                        document.getElementById('rewardarea').style.display = "none";
