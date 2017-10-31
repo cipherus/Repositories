@@ -1,5 +1,5 @@
 $(document).ready(function() {
-                  //$(".picture").hide();
+                 
                   document.getElementById('rewardarea').style.display = "none";
                   document.getElementById('failarea').style.display = "none";
                   
@@ -12,8 +12,9 @@ $(document).ready(function() {
                   
                   if(window.DeviceOrientationEvent) {
                     window.addEventListener('deviceorientation', function(event) {
-                                          //alpha = event.webkitCompassHeading;
-                                            alpha = event.alpha;
+                                          alpha = event.webkitCompassHeading;
+                                          alpha = Math.floor(alpha);
+                                            
                                           }, false);
                   
                   }
@@ -27,7 +28,7 @@ $(document).ready(function() {
                                        ((orientations[orientationValue] - accuracy) < alpha && alpha < (orientations[orientationValue] + accuracy) ) ) {
                                                              winCounter++;
 
-                                                             orientationValue++;
+                                                           
                                                              if (orientationValue > 7) { orientationValue = 0;};
                                                               document.getElementById('mainarea').style.display = "none";
                                                               document.getElementById('rewardarea').style.display = "block";
