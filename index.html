@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Introduction and Game Instructions</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <style type="text/css">
             body{ color: white;
                 background:black url(dualcompassrose.png) no-repeat center center fixed;
@@ -9,18 +10,23 @@
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
-                font-family:"trebuchet ms";
+                font-family:'Open Sans', sans-serif;
             }
-        h1 {background-color: #0000B6; color: #ffa500; text-align: center; font-family:"impact", "apple chancery"}
-        input {background-color: #000096; color: #ffa500; border-color: #ffa500;
-            font-size: xx-large; font-family:"apple chancery"; width: 10em;  height: 2em;
-            }
+        .design {background-color: purple; color: #ffa500; border-color: #ffa500;
+         
+            font-size: 48px;
+            padding: 20px; margin: 4px 2px; border-radius: 8px;
+            text-align: center; text-decoration: : none;}
+
+        input {
+             display: inline-block;}
+            
             div {text-align: center}
 
         </style>
     </head>
     <body>
-        <h1>IS THAT A UNICORN?!</h1>
+        <h1 class= "design">IS THAT A UNICORN?!</h1>
         <h3> Game Instructions </h3>
         <p>Welcome to <b>IS THAT A UNICORN?!</b> the game that trains your
         inner compass. Your mission, if you choose to accept it, is to orient yourself and your device
@@ -28,7 +34,7 @@
         button to confirm your orientation.</p>
         <p> You succeed if you have correctly determined which direction to face.</p>
         <div>
-        <input id="toGame" type="button" value="To the Game"
+        <input  class="design" id="toGame" type="button" value="To the Game"
         onclick="window.location='isThatAUnicorn.html'"/>
         </div>
         <h3>Tips</h3>
@@ -39,7 +45,7 @@
         </ol>
         
         
-        <p> PS: A mobile device with an integrated geomagnetic sensor is required to play .</p>
+        <p> PS: A mobile device with an integrated geomagnetic sensor is required to play.</p>
         
         
     </body>
