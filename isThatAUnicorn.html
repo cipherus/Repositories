@@ -9,9 +9,9 @@
             }
         body { color: white;
             background:black url(dualcompassrose.png) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
+            -webkit-background-size: contain;
+            -moz-background-size: contain;
+            -o-background-size: contain;
             background-size: cover;
             min-height: 100%;
             font-family: 'Open Sans', sans-serif;
@@ -32,12 +32,13 @@
         
         #mainarea {position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);}
         #rewardarea{display:none; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); 
-            height: 85%; object-fit: contain}
+            height: 75%; object-fit: contain}
         #failarea{display:none; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);
-        height: 85%; object-fit: contain }
+        height: 75%; object-fit: contain }
 
 
-        .orientationHelp {position: absolute; top: 90%; left: 50%; transform: translateX(-50%) translateY(-50%);}
+        .orientationHelp {position: absolute; top: 90%; left: 50%; transform: translateX(-50%) translateY(-50%);
+            background: rgba(0,0,0, 0.5);}
         #helpButton{font-size: xx-large;display:block; padding: 5px}
         #noHelp{font-size: xx-large;display:block; padding: 5px}
         #help{font-size: xx-large; display:none;}
@@ -73,7 +74,7 @@
      
         
         
-        <h2 class= "orientationHelp">
+        <h2 class= "orientationHelp" >
             
             <input class ="button" class= "orientationHelp"  id= "helpButton" type="button" value="Need Help?">
 
