@@ -19,7 +19,11 @@ $(document).ready(function() {
                                             
                                           }, false);
                   
+                  } else {
+                    document.getElementById('desktoparea').style.display = "block";
                   }
+
+
                   $("#helpButton").click(function() {
                     document.getElementById('helpButton').style.display = "none";
                     document.getElementById('help').style.display = "block";
@@ -33,10 +37,23 @@ $(document).ready(function() {
 
 
                   });
+                  $("#inputSubmit").click(function() {
+                    var accValue = Math.floor(document.getElementById("inputAcc").value);
+                    if (Number.isInteger(accValue) && accValue >= 4 && accValue <= 360) {
+                      accuracy = accValue;
+                    }
+                    //Either update or reset to old value if input wasn't an integer
+                    document.getElementById("inputAcc").value = accuracy;
+
+                  });
 
 
                   $("#button").click(function() {
                                      
+                                     //hide desktoparea
+                                     document.getElementById("desktoparea").style.display = "none";
+
+
                                      $("#alphaValue").text(alpha);
                                      
                                      
