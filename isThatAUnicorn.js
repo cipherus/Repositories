@@ -9,17 +9,34 @@ $(document).ready(function() {
                   var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
                   var accuracy = 20;
                   var alpha = -1;
+                  var alphaFeat = [0,0,0,0];
+                  var alphaCounter = 0;
                   
                   if(window.DeviceOrientationEvent) {
+                    document.getElementById('desktoparea').style.display = "none";
                     window.addEventListener('deviceorientation', function(event) {
                       if(event.webkitCompassHeading) {
-                                          alpha = Math.floor(event.webkitCompassHeading);
+                                          alphaFeat[alphaCounter] = Math.floor(event.webkitCompassHeading);
+
                                         }
-                                        else {alpha = Math.floor(event.alpha);}
+                                        else {alphaFeat[alphaCounter] = Math.floor(event.alpha);}
+
+                                        
+                                        //Featurevalue can cause problems at North!
+                                        var count = 0;
+                                        for(var i=0, n=alphaFeat.length; i < n; i++) 
+                                         { 
+                                            count += alphaFeat[i]; 
+                                         }
+                                        alpha = count / 6;
+
+                                        alphaCounter = (alphaCounter + 1) % 4;
+
                                             
                                           }, false);
                   
                   } else {
+                    //Show 
                     document.getElementById('desktoparea').style.display = "block";
                   }
 
