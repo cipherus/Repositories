@@ -31,10 +31,13 @@
             text-align: center; text-decoration: none;}
         
         #mainarea {position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);}
+        
         #rewardarea{display:none; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); 
             height: 70%; object-fit: contain}
         #failarea{display:none; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);
         height: 70%; object-fit: contain }
+        #desktoparea {max-width: 85%; left: 50%; font-size: larger; display: none }
+        .accuracyarea { display: none }
 
 
         .orientationHelp {position: absolute; top: 90%; left: 50%; transform: translateX(-50%) translateY(-50%);
@@ -43,19 +46,57 @@
         #noHelp{font-size: xx-large;display:block; padding: 5px}
         #help{font-size: xx-large; display:none;}
 
+        #theader{font-family: 'Open Sans', sans-serif;}
+
+        @media screen and (min-width: 960px){
+        	/*		show accuracy setting */
+        	.accuracyarea{display: block;}
+
+
+        }
+
+        @media screen and (max-width:960px) {
+        	/* do everything normal way */
+        	.accuracyarea{display: none}
+
+        }
+
         
         
         </style>
     </head>
     <body>
         
-        
-        
-        <h1 class= "unicornCounter">
-            <img class="unicornCounter" src="unicornCounter.png" /> X  <b id=winCounter> 0</b>
-            
-        </h1>
-        
+        <table cellpadding="10px">
+        	<tr id = "theader">
+        		<th colspan="1">Streak</th>
+  				<th colspan="1"></th>
+ 				<th class= "accuracyarea" colspan="1" >Change required accuracy</th>
+        	</tr>
+        	<tr>
+        		<td>
+        			<h1 class= "unicornCounter">
+		            <img class="unicornCounter" src="unicornCounter.png" /> X  <b id=winCounter> 0</b>
+
+		            
+		      		</h1>
+		    	</td>
+		        <td><div id= "desktoparea">
+		        		You are using a device that does not support a device orientation sensor and can therefore not play this game effectively. Your device is always facing north by default, so go ahead and press the button anyway to win the first round.
+	       	 		</div>
+	       		</td>
+
+	       		<td>
+	       			<div class="accuracyarea">
+		        	<input id= "inputAcc" type="number" min="2" max="180" step="2" value="20" style="font-size: xx-large; background:black; color: white" /> degrees.
+		        	<input type="inputSubmit" value="Submit" style="font-size: xx-large; background:black; color: white">
+		    		</div>
+	       		</td>
+		         
+	    	</tr>
+		</table>
+
+
         
         <div id="mainarea">
             <h1 id="objective" >
@@ -71,7 +112,8 @@
 
 
         <img id ="failarea" src="horsefail.gif"/>    
-     
+     	
+
         
         
         <h2 class= "orientationHelp" >
@@ -83,6 +125,7 @@
                 <input class ="button" class= "orientationHelp"  id ="noHelp" type="button" value="No I don't need help.">
             </div>
         </h2>
+
         
         
         
