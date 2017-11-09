@@ -29,7 +29,7 @@ $(document).ready(function() {
                                             count += alphaFeat[i]; 
                                          }
                                         alpha = count / 6;
-                                        alpha = (alpha - 360.0) * (-1);
+                                        alpha = 360 - alpha;
                                         alphaCounter = (alphaCounter + 1) % 6;
                                         
 
