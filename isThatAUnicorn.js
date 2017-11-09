@@ -9,7 +9,7 @@ $(document).ready(function() {
                   var orientations = [225, 0, 135, 270, 180, 315, 90, 45];
                   var accuracy = 20;
                   var alpha = -1;
-                  var alphaFeat = [0,0,0,0];
+                  var alphaFeat = [0,0,0,0,0,0];
                   var alphaCounter = 0;
                   
                   if(window.DeviceOrientationEvent) {
@@ -29,9 +29,9 @@ $(document).ready(function() {
                                             count += alphaFeat[i]; 
                                          }
                                         alpha = count / 6;
-
-                                        alphaCounter = (alphaCounter + 1) % 4;
-                                        alphaCounter = (alphaCounter - 360) * (-1);
+                                        alpha = (alpha - 360.0) * (-1);
+                                        alphaCounter = (alphaCounter + 1) % 6;
+                                        
 
                                             
                                           }, false);
