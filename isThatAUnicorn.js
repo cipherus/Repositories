@@ -6,7 +6,7 @@ $(document).ready(function() {
                   var winCounter = 0;
                   var orientationValue = 1;
                   var orientationStrings = ["South West", "North", "South East", "West", "South", "North West", "East", "North East"];
-                  var orientations = [135, 0, 225, 90, 180, 45, 270, 315];
+                  var orientations = [225, 0, 135, 270, 180, 315, 90, 45];
                   var accuracy = 20;
                   var alpha = -1;
                   var alphaFeat = [0,0,0,0];
@@ -31,6 +31,7 @@ $(document).ready(function() {
                                         alpha = count / 6;
 
                                         alphaCounter = (alphaCounter + 1) % 4;
+                                        alphaCounter = (alphaCounter - 360) * (-1);
 
                                             
                                           }, false);
